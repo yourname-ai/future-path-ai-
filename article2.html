@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI時代に高校生が身につけるべきスキル | Future Path AI</title>
+  <meta name="description" content="AI時代を生き抜くために高校生が今から身につけるべきスキルを解説。ChatGPTなどのAIツールの使い方から、人間にしかできない能力まで具体的に紹介します。">
+  <meta property="og:title" content="AI時代に高校生が身につけるべきスキル">
+  <meta property="og:description" content="AI時代を生き抜くために高校生が今から身につけるべきスキルを解説します。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #f9f7f4;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+    }
+
+    header a {
+      color: #f9f7f4;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #f9f7f4;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      background: #c8a96e;
+      color: #1a1a1a;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: bold;
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero .meta {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #444;
+      background: #fff;
+      border-left: 4px solid #c8a96e;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #1a1a1a;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin: 1.8rem 0 0.6rem;
+      color: #2d2d2d;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #333;
+      font-size: 0.97rem;
+    }
+
+    .skill-card {
+      background: #fff;
+      border: 1px solid #e8e4de;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .skill-icon {
+      width: 44px;
+      height: 44px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    .skill-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+    }
+
+    .skill-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .highlight-box {
+      background: #1a1a1a;
+      color: #f9f7f4;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h3 {
+      color: #c8a96e;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .highlight-box p {
+      color: #ccc;
+      margin: 0;
+      font-size: 0.93rem;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .comp-card {
+      border-radius: 8px;
+      padding: 1.2rem;
+    }
+
+    .comp-card.bad {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+
+    .comp-card.good {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+    }
+
+    .comp-card .comp-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+
+    .comp-card.bad .comp-label { color: #dc2626; }
+    .comp-card.good .comp-label { color: #16a34a; }
+
+    .comp-card p {
+      font-size: 0.88rem;
+      margin: 0;
+      color: #444;
+    }
+
+    .cta {
+      background: #c8a96e;
+      color: #1a1a1a;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+
+    .cta h2 {
+      border: none;
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .cta p {
+      color: #3a2e1a;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #f9f7f4;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .cta a:hover { opacity: 0.8; }
+
+    .related {
+      margin: 2rem 0;
+    }
+
+    .related h2 { margin-bottom: 1rem; }
+
+    .related a {
+      display: block;
+      padding: 1rem 1.2rem;
+      border: 1px solid #e8e4de;
+      border-radius: 8px;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.93rem;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+
+    .related a:hover { border-color: #c8a96e; }
+
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .comparison { grid-template-columns: 1fr; }
+      .hero { padding: 2.5rem 1.2rem; }
+      .container { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/">Future Path AI</a>
+</header>
+
+<div class="hero">
+  <div class="tag">スキル・AI</div>
+  <h1>AI時代に高校生が<br>身につけるべきスキル</h1>
+  <p class="meta">2025年 | Future Path AI 編集部</p>
+</div>
+
+<div class="container">
+
+  <p class="lead">
+    ChatGPTをはじめとするAIが当たり前になった今、「AIに仕事を奪われる」という不安を持つ人が増えています。でも本当に必要なのは、AIを恐れることではなく、AIと一緒に生きるスキルを身につけることです。高校生の今から始めれば、圧倒的に有利になれます。
+  </p>
+
+  <h2>AIに「奪われる」スキルと「奪われない」スキル</h2>
+
+  <p>まず正直に言うと、単純作業・定型業務・情報収集といった仕事はAIが得意です。これらに依存するだけでは将来が厳しくなります。一方で、AIが苦手なことに集中すれば、あなたの価値は上がります。</p>
+
+  <div class="comparison">
+    <div class="comp-card bad">
+      <div class="comp-label">AIが得意なこと</div>
+      <p>・文章の要約・翻訳<br>・データの集計・分析<br>・定型的な文書作成<br>・情報検索・まとめ</p>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-label">人間が優位なこと</div>
+      <p>・独自の視点・判断<br>・感情を動かす表現<br>・信頼関係の構築<br>・未知の問題を解く力</p>
+    </div>
+  </div>
+
+  <h2>今から身につけるべき5つのスキル</h2>
+
+  <div class="skill-card">
+    <div class="skill-icon">💬</div>
+    <div>
+      <h3>言語化力 — 考えを言葉にする力</h3>
+      <p>AIに指示を出すにも、人を説得するにも、「言葉にする力」が核心です。日記、SNS投稿、友人との議論など、日常から言語化の練習をしましょう。アウトプットの量が、この力を育てます。</p>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🤖</div>
+    <div>
+      <h3>AIプロンプト力 — AIを使いこなす力</h3>
+      <p>ChatGPTやClaudeに「どう指示するか」で、結果の質が10倍変わります。AIを道具として使いこなせる人と、ただ使うだけの人では、将来的に大きな差がつきます。今すぐ無料で練習できます。</p>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🔍</div>
+    <div>
+      <h3>批判的思考力 — 情報を疑う力</h3>
+      <p>AIは間違いを自信満々に答えることがあります。「この情報は本当か？」と問い続ける力が、AI時代の必須スキルです。複数のソースを確認する習慣を今から身につけましょう。</p>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🌐</div>
+    <div>
+      <h3>英語力 — 世界とつながる力</h3>
+      <p>最新のAIツールや情報の多くは英語で発信されます。英語ができるだけで、アクセスできる情報量が数倍になります。完璧でなくていい。「読める・使える」レベルを目指しましょう。</p>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🤝</div>
+    <div>
+      <h3>巻き込む力 — 人を動かす力</h3>
+      <p>どれだけAIが進化しても、最終的に動くのは人間です。「この人と一緒にやりたい」と思わせる力は、AIには代替できません。部活、文化祭、コミュニティなど、リーダーシップを発揮する機会を積極的に作りましょう。</p>
+    </div>
+  </div>
+
+  <h2>高校生のうちに始めるべき理由</h2>
+
+  <p>スキルは「早く始めた人」が圧倒的に有利です。大学生になってから始めた人より、高校生から始めた人は2〜3年分の差がつきます。社会人になってからでは、学ぶ時間自体が少なくなります。</p>
+
+  <div class="highlight-box">
+    <h3>今日からできること</h3>
+    <p>
+      1. ChatGPTやClaudeで何か一つ「実験」してみる<br>
+      2. 気になるニュースを読んで、自分の意見を3行書いてみる<br>
+      3. 英語のYouTubeを字幕なしで5分見てみる
+    </p>
+  </div>
+
+  <h2>まとめ</h2>
+
+  <p>AI時代に必要なのは、AIを恐れることではなく、AIと共存するスキルです。言語化力・AIプロンプト力・批判的思考力・英語力・巻き込む力——この5つを意識するだけで、あなたの将来の選択肢は大きく広がります。</p>
+
+  <p>大切なのは、完璧を目指すことではなく、今日から少しずつ始めることです。</p>
+
+  <div class="cta">
+    <h2>自分に合ったスキルを知りたい？</h2>
+    <p>AIがあなたの強みと興味を分析して、身につけるべきスキルを提案します。</p>
+    <a href="/">無料で診断してみる</a>
+  </div>
+
+  <div class="related">
+    <h2>関連記事</h2>
+    <a href="/article1.html">高校生で将来が見えない時にやるべきこと</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Future Path AI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
