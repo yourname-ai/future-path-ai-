@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="eEVINp46HOfP6VdIfGklNh-iHLlzAlEJ0GfStA8IOMs" />
-  <title>Future Path AI — あなたの未来を、AIが本気で考える</title>
-  <meta name="description" content="悩み・興味・理想の人生を書くだけ。AIが本格的に将来を分析し、具体的な行動プランを提案します。高校生・大学生向け無料診断。">
+  <title>Future Path AI — 高校生・大学生の進路メディア</title>
+  <meta name="description" content="AI時代を生きる高校生・大学生のための進路メディア。将来の悩み、スキル、留学・起業など、あなたの未来を考えるヒントを届けます。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -28,7 +28,6 @@
       min-height: 100vh;
     }
 
-    /* Header */
     nav {
       display: flex;
       justify-content: space-between;
@@ -50,18 +49,26 @@
       text-decoration: none;
     }
 
-    .nav-link {
+    .nav-cta {
       font-size: 0.82rem;
-      color: var(--muted);
+      color: var(--ink);
       text-decoration: none;
-      letter-spacing: 0.05em;
+      border: 1px solid var(--ink);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, color 0.2s;
     }
 
-    /* Hero */
+    .nav-cta:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
     .hero {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 5rem 2rem 3rem;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 5rem 2rem 4rem;
       text-align: center;
     }
 
@@ -69,46 +76,71 @@
       display: inline-block;
       font-size: 0.72rem;
       letter-spacing: 0.15em;
-      color: var(--gold);
-      border: 1px solid var(--gold-light);
+      color: var(--gold-light);
+      border: 1px solid #444;
       padding: 0.3rem 1rem;
       border-radius: 100px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       text-transform: uppercase;
     }
 
-    h1 {
+    .hero h1 {
       font-family: 'Shippori Mincho', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: 0.02em;
-      margin-bottom: 1.2rem;
-      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 1rem;
     }
 
-    .hero-sub {
+    .hero p {
       font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 520px;
-      margin: 0 auto 3rem;
+      color: #aaa;
       font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    /* Main card */
-    .card {
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .articles-section h2 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-card {
+      display: block;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      box-shadow: 0 4px 40px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    .section-label {
-      font-size: 0.72rem;
+    .article-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .article-tag {
+      font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
@@ -116,205 +148,122 @@
       font-weight: 500;
     }
 
-    .field-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .field-title {
+    .article-card h3 {
       font-family: 'Shippori Mincho', serif;
-      font-size: 1rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
       color: var(--ink);
     }
 
-    textarea {
-      width: 100%;
-      padding: 0.9rem 1.1rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-family: 'DM Sans', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      resize: vertical;
-      line-height: 1.7;
-      transition: border-color 0.2s;
-      outline: none;
-    }
-
-    textarea:focus {
-      border-color: var(--gold);
-    }
-
-    textarea::placeholder {
-      color: #b0a898;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 1rem;
-      background: var(--ink);
-      color: var(--paper);
-      border: none;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      cursor: pointer;
-      letter-spacing: 0.03em;
-      transition: opacity 0.2s, transform 0.1s;
-      margin-top: 0.5rem;
-    }
-
-    .btn:hover { opacity: 0.85; }
-    .btn:active { transform: scale(0.99); }
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-    /* Loading */
-    .loading {
-      display: none;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    .loading-dots {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      margin-bottom: 1rem;
-    }
-
-    .loading-dots span {
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: bounce 1.2s infinite;
-    }
-
-    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes bounce {
-      0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
-      40% { transform: translateY(-8px); opacity: 1; }
-    }
-
-    .loading p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    /* Result */
-    .result {
-      display: none;
-      max-width: 720px;
-      margin: 0 auto 3rem;
-    }
-
-    .result-header {
-      background: var(--ink);
-      color: var(--paper);
-      border-radius: 16px 16px 0 0;
-      padding: 2rem 2.5rem;
-    }
-
-    .result-header .label {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .result-type {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .result-body {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-top: none;
-      border-radius: 0 0 16px 16px;
-      padding: 2rem 2.5rem;
-    }
-
-    .result-body p {
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: #333;
-      white-space: pre-wrap;
-    }
-
-    .result-body h3 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.6rem;
-      color: var(--ink);
-      border-left: 3px solid var(--gold);
-      padding-left: 0.7rem;
-    }
-
-    .retry-btn {
-      display: block;
-      margin: 1.5rem auto 0;
-      padding: 0.7rem 2rem;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+    .article-card p {
       font-size: 0.88rem;
       color: var(--muted);
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: border-color 0.2s;
+      line-height: 1.6;
+      font-weight: 300;
     }
 
-    .retry-btn:hover { border-color: var(--ink); color: var(--ink); }
-
-    /* Article links */
-    .articles {
-      max-width: 720px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
-    }
-
-    .articles h2 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      color: var(--ink);
-    }
-
-    .article-link {
-      display: block;
-      padding: 1rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 0.6rem;
-      text-decoration: none;
-      color: var(--ink);
-      font-size: 0.93rem;
-      background: var(--card);
-      transition: border-color 0.2s;
-    }
-
-    .article-link:hover { border-color: var(--gold); }
-
-    .article-link span {
-      font-size: 0.75rem;
+    .article-card .read-more {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
       color: var(--gold);
-      display: block;
-      margin-bottom: 0.2rem;
       letter-spacing: 0.05em;
     }
 
-    /* Footer */
+    .article-card.coming {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .coming-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 5rem;
+    }
+
+    .sidebar-card {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .sidebar-card .s-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .sidebar-card h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+      color: var(--paper);
+    }
+
+    .sidebar-card p {
+      font-size: 0.85rem;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      font-weight: 300;
+    }
+
+    .sidebar-btn {
+      display: block;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .sidebar-btn:hover { opacity: 0.85; }
+
+    .sidebar-info {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .sidebar-info h4 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      color: var(--ink);
+    }
+
+    .sidebar-info p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem;
@@ -323,10 +272,11 @@
       color: var(--muted);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
+      .main { grid-template-columns: 1fr; gap: 2rem; }
+      .sidebar { position: static; }
       nav { padding: 1rem 1.2rem; }
-      .hero { padding: 3rem 1.2rem 2rem; }
-      .card, .result-header, .result-body { padding: 1.5rem; }
+      .hero { padding: 3rem 1.2rem 2.5rem; }
     }
   </style>
 </head>
@@ -334,169 +284,58 @@
 
 <nav>
   <a href="/" class="logo">Future Path AI</a>
-  <a href="/article1.html" class="nav-link">記事を読む</a>
+  <a href="/shindan.html" class="nav-cta">無料で診断する</a>
 </nav>
 
 <div class="hero">
-  <div class="hero-badge">AI 進路診断 — 無料</div>
-  <h1>あなたの未来を、<br>AIが本気で考える。</h1>
-  <p class="hero-sub">悩み・興味・理想の人生を自由に書いてください。最新AIが深く読み解き、あなただけの行動プランを提案します。</p>
+  <div class="hero-badge">進路メディア</div>
+  <h1>あなたの未来を、<br>一緒に考える。</h1>
+  <p>AI時代を生きる高校生・大学生のための進路メディア。将来の悩みに、正直に向き合います。</p>
 </div>
 
-<div class="card" id="formCard">
-  <div class="field-group">
-    <div class="section-label">01 / 悩み</div>
-    <div class="field-title">今、悩んでいることは？</div>
-    <textarea id="worries" rows="3" placeholder="進路、勉強、人間関係、将来のお金のこと… なんでも"></textarea>
+<div class="main">
+  <div class="articles-section">
+    <h2>最新記事</h2>
+
+    <a href="/article1.html" class="article-card">
+      <div class="article-tag">進路・将来</div>
+      <h3>高校生で将来が見えない時に<br>やるべきこと</h3>
+      <p>「周りはもう決まってるのに自分だけ…」そんな焦りを感じているあなたへ。将来が見えない理由と、今すぐできる具体的なアクションを解説します。</p>
+      <span class="read-more">記事を読む →</span>
+    </a>
+
+    <a href="/article2.html" class="article-card">
+      <div class="article-tag">スキル・AI</div>
+      <h3>AI時代に高校生が<br>身につけるべきスキル</h3>
+      <p>ChatGPTが当たり前になった今、何を学べばいいのか。AIに奪われないスキルと、今日から始められる練習法を紹介します。</p>
+      <span class="read-more">記事を読む →</span>
+    </a>
+
+    <a class="article-card coming">
+      <div class="article-tag">留学・起業 <span class="coming-badge">近日公開</span></div>
+      <h3>留学と起業、どちらを選ぶべきか</h3>
+      <p>どちらも「将来の選択肢を広げる」と言われるが、本当に自分に合っているのはどちらか。タイプ別に徹底比較します。</p>
+    </a>
   </div>
 
-  <div class="field-group">
-    <div class="section-label">02 / 興味</div>
-    <div class="field-title">最近、心が動いたこと・好きなことは？</div>
-    <textarea id="interests" rows="3" placeholder="AI、起業、音楽、スポーツ、旅行、ゲーム… "></textarea>
-  </div>
+  <div class="sidebar">
+    <div class="sidebar-card">
+      <div class="s-label">AI 無料診断</div>
+      <h3>あなたの将来タイプを<br>AIが分析</h3>
+      <p>悩み・興味・理想を書くだけ。最新AIがあなただけの行動プランを提案します。</p>
+      <a href="/shindan.html" class="sidebar-btn">無料で診断してみる</a>
+    </div>
 
-  <div class="field-group">
-    <div class="section-label">03 / 理想</div>
-    <div class="field-title">理想の人生・こんな自分になりたい</div>
-    <textarea id="ideal" rows="3" placeholder="5年後・10年後、どんな生き方をしていたいですか？"></textarea>
+    <div class="sidebar-info">
+      <h4>Future Path AI とは</h4>
+      <p>将来に悩む高校生・大学生のために作られた進路メディアです。AIを活用した診断ツールと、実践的な記事で、あなたの一歩をサポートします。</p>
+    </div>
   </div>
-
-  <button class="btn" id="analyzeBtn" onclick="analyze()">AIで本格診断する</button>
-</div>
-
-<div class="loading" id="loading">
-  <div class="loading-dots">
-    <span></span><span></span><span></span>
-  </div>
-  <p>AIがあなたの言葉を深く読み解いています…</p>
-</div>
-
-<div class="result" id="result">
-  <div class="result-header">
-    <div class="label">診断結果</div>
-    <div class="result-type" id="resultType"></div>
-  </div>
-  <div class="result-body">
-    <div id="resultBody"></div>
-    <button class="retry-btn" onclick="retry()">もう一度診断する</button>
-  </div>
-</div>
-
-<div class="articles">
-  <h2>関連記事</h2>
-  <a href="/article1.html" class="article-link">
-    <span>進路・将来</span>
-    高校生で将来が見えない時にやるべきこと
-  </a>
-  <a href="/article2.html" class="article-link">
-  <span>スキル・AI</span>
-  AI時代に高校生が身につけるべきスキル
-</a>
 </div>
 
 <footer>
   © 2025 Future Path AI — AIで、あなたらしい未来へ。
 </footer>
-
-<script>
-async function analyze() {
-  const worries = document.getElementById('worries').value.trim();
-  const interests = document.getElementById('interests').value.trim();
-  const ideal = document.getElementById('ideal').value.trim();
-
-  if (!worries && !interests && !ideal) {
-    alert('何か書いてから診断してください。');
-    return;
-  }
-
-  const btn = document.getElementById('analyzeBtn');
-  btn.disabled = true;
-  document.getElementById('formCard').style.display = 'none';
-  document.getElementById('loading').style.display = 'block';
-  document.getElementById('result').style.display = 'none';
-
-  const prompt = `あなたは高校生・大学生の進路相談の専門家です。以下の情報をもとに、本格的な将来診断を行ってください。
-
-【悩み】
-${worries || '（記入なし）'}
-
-【興味・関心】
-${interests || '（記入なし）'}
-
-【理想の人生】
-${ideal || '（記入なし）'}
-
-以下の形式で回答してください：
-
-■ あなたのタイプ（一行で、例：「自己表現型クリエイター」「社会変革型起業家」など独自のタイプ名）
-
-■ 分析（3〜4文で、この人の本質的な強みと価値観を読み解く）
-
-■ 向いている道（具体的な職業・進路を2〜3つ、それぞれ1〜2文で説明）
-
-■ 今すぐできる行動（今月できる具体的なアクションを3つ、箇条書き）
-
-■ ひとこと（励ましのメッセージを1文で）
-
-温かく、でも本質を突いた診断をしてください。`;
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    const data = await response.json();
-    const text = data.content?.[0]?.text || '';
-
-    // Parse type from first line
-    const lines = text.split('\n').filter(l => l.trim());
-    let typeLine = '';
-    let bodyLines = [];
-
-    for (let i = 0; i < lines.length; i++) {
-      if (lines[i].includes('あなたのタイプ') || (i === 0 && lines[i].startsWith('■'))) {
-        typeLine = lines[i].replace('■', '').replace('あなたのタイプ', '').replace(/[：:]/g, '').trim();
-      } else {
-        bodyLines.push(lines[i]);
-      }
-    }
-
-    // Format body
-    const formatted = bodyLines.join('\n')
-      .replace(/■\s*/g, '<h3>')
-      .replace(/\n(<h3>)/g, '</p>$1')
-      .replace(/<h3>([^\n]+)/g, '<h3>$1</h3><p>');
-
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('resultType').textContent = typeLine || 'あなただけの未来型';
-    document.getElementById('resultBody').innerHTML = '<p>' + formatted + '</p>';
-    document.getElementById('result').style.display = 'block';
-
-  } catch (e) {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('formCard').style.display = 'block';
-    btn.disabled = false;
-    alert('エラーが発生しました。もう一度お試しください。');
-  }
-}
-
-function retry() {
-  document.getElementById('result').style.display = 'none';
-  document.getElementById('formCard').style.display = 'block';
-  document.getElementById('analyzeBtn').disabled = false;
-  document.getElementById('worries').value = '';
-  document.getElementById('interests').value = '';
-  document.getElementById('ideal').value = '';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
 
 </body>
 </html>
