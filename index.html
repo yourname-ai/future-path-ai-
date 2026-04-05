@@ -1,43 +1,126 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Future Path AI</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 40px;
-      background: #f7f7f7;
-    }
-    .box {
-      background: white;
+      background: #f6f6f6;
       padding: 30px;
-      border-radius: 20px;
+    }
+    .card {
       max-width: 700px;
       margin: auto;
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
-    button {
-      padding: 12px 20px;
+    textarea, button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
       border-radius: 12px;
       border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
       cursor: pointer;
+      font-weight: bold;
+    }
+    .result {
+      margin-top: 25px;
+      padding: 20px;
+      background: #fafafa;
+      border-radius: 16px;
+      border: 1px solid #ddd;
     }
   </style>
 </head>
 <body>
-  <div class="box">
+  <div class="card">
     <h1>Future Path AI</h1>
-    <p>高校生向け 将来診断サイト</p>
-    <button onclick="showResult()">AIで将来を分析する</button>
-    <p id="result"></p>
+    <p>今の悩み・興味・理想の人生を自由に書いてください</p>
+
+    <textarea id="inputText" rows="6" placeholder="例: 将来が見えないけど、AIや起業に興味があって認められたい"></textarea>
+
+    <button onclick="analyzeFuture()">AIで将来を分析する</button>
+
+    <div id="result" class="result" style="display:none;"></div>
   </div>
 
   <script>
-    function showResult() {
-      document.getElementById("result").innerText =
-        "あなたは AI × 起業家タイプ です";
-    }
+function analyzeFuture() {
+  const text = document.getElementById("inputText").value;
+  const resultBox = document.getElementById("result");
+
+  let scores = {
+    "AI × 起業家": 0,
+    "発信者": 0,
+    "グローバル": 0,
+    "投資家": 0,
+    "クリエイター": 0,
+    "教育者": 0,
+    "探求者": 10
+  };
+
+  // AI × 起業家
+  ["AI", "起業", "稼ぎ", "お金", "仕組み", "経営"].forEach(word => {
+    if (text.includes(word)) scores["AI × 起業家"] += 20;
+  });
+
+  // 発信者
+  ["配信", "SNS", "YouTube", "発信", "影響"].forEach(word => {
+    if (text.includes(word)) scores["発信者"] += 20;
+  });
+
+  // グローバル
+  ["留学", "海外", "英語", "世界"].forEach(word => {
+    if (text.includes(word)) scores["グローバル"] += 20;
+  });
+
+  // 投資家
+  ["投資", "金融", "資産", "株", "お金"].forEach(word => {
+    if (text.includes(word)) scores["投資家"] += 20;
+  });
+
+  // クリエイター
+  ["動画", "デザイン", "編集", "創作"].forEach(word => {
+    if (text.includes(word)) scores["クリエイター"] += 20;
+  });
+
+  // 教育者
+  ["教える", "教育", "コーチ", "成長"].forEach(word => {
+    if (text.includes(word)) scores["教育者"] += 20;
+  });
+
+  const ranking = Object.entries(scores)
+    .sort((a, b) => b[1] - a[1]);
+
+  const topType = ranking[0][0];
+  const topScore = ranking[0][1];
+
+  let rankingHtml = ranking
+    .map(item => `<li>${item[0]}: ${item[1]}点</li>`)
+    .join("");
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML = `
+    <h2>AI診断結果</h2>
+    <p><strong>あなたの最適タイプ:</strong> ${topType}</p>
+    <p><strong>適性スコア:</strong> ${topScore}点</p>
+    <h3>全体ランキング</h3>
+    <ol>${rankingHtml}</ol>
+    <p><strong>行動プラン:</strong><br>
+    今月: 上位タイプに関連するスキルを毎日30分学ぶ<br>
+    3か月: 実績を1つ作る<br>
+    1年: 自分の強みで小さく収益化
+    </p>
+  `;
+}
   </script>
 </body>
 </html>
