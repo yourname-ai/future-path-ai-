@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高校生でも使えるAIツール完全ガイド | Future Path AI</title>
+  <meta name="description" content="高校生でも無料で使えるAIツールを完全解説。勉強・進路・副業など、目的別におすすめのAIツールと使い方を紹介します。">
+  <meta property="og:title" content="高校生でも使えるAIツール完全ガイド">
+  <meta property="og:description" content="高校生でも無料で使えるAIツールを完全解説。目的別におすすめのAIツールと使い方を紹介します。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #f9f7f4;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+    }
+
+    header a {
+      color: #f9f7f4;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #f9f7f4;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      background: #c8a96e;
+      color: #1a1a1a;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: bold;
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero .meta { font-size: 0.85rem; color: #aaa; }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #444;
+      background: #fff;
+      border-left: 4px solid #c8a96e;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #1a1a1a;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin: 1.8rem 0 0.6rem;
+      color: #2d2d2d;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #333;
+      font-size: 0.97rem;
+    }
+
+    .tool-card {
+      background: #fff;
+      border: 1px solid #e8e4de;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.2rem 0;
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .tool-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .tool-name {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #f0ede8;
+      color: #7a7265;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-top: 0.2rem;
+    }
+
+    .tool-free {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #bbf7d0;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+    }
+
+    .tool-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .tool-use {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #c8a96e;
+      font-weight: bold;
+    }
+
+    .highlight-box {
+      background: #1a1a1a;
+      color: #f9f7f4;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h3 {
+      color: #c8a96e;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .highlight-box p {
+      color: #ccc;
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
+
+    .warning-box {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .warning-box .w-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: #b45309;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+
+    .warning-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .cta {
+      background: #c8a96e;
+      color: #1a1a1a;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+
+    .cta h2 { border: none; margin-top: 0; font-size: 1.4rem; }
+    .cta p { color: #3a2e1a; margin-bottom: 1.2rem; }
+
+    .cta a {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #f9f7f4;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .cta a:hover { opacity: 0.8; }
+
+    .related h2 { margin-bottom: 1rem; }
+
+    .related a {
+      display: block;
+      padding: 1rem 1.2rem;
+      border: 1px solid #e8e4de;
+      border-radius: 8px;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.93rem;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+
+    .related a:hover { border-color: #c8a96e; }
+
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 2.5rem 1.2rem; }
+      .container { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/">Future Path AI</a>
+</header>
+
+<div class="hero">
+  <div class="tag">AIツール</div>
+  <h1>高校生でも使える<br>AIツール完全ガイド</h1>
+  <p class="meta">2025年 | Future Path AI 編集部</p>
+</div>
+
+<div class="container">
+
+  <p class="lead">
+    「AIって難しそう」と思っていませんか？実は今のAIツールは、専門知識ゼロの高校生でも無料で使えるものが多いです。この記事では、勉強・進路・自己表現など目的別に、今すぐ使えるAIツールをまとめました。
+  </p>
+
+  <h2>勉強に使えるAIツール</h2>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-icon">🤖</div>
+      <div>
+        <div class="tool-name">ChatGPT <span class="tool-free">無料あり</span></div>
+        <div class="tool-tag">勉強・質問・作文</div>
+      </div>
+    </div>
+    <p>わからない問題を質問すると、わかりやすく解説してくれます。「中学生にもわかるように説明して」と伝えると、レベルに合わせた回答が返ってきます。英語の文法チェックや作文添削にも使えます。</p>
+    <div class="tool-use">使い方例：「二次関数の頂点の求め方を教えて」「この英作文を直して」</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-icon">✨</div>
+      <div>
+        <div class="tool-name">Claude <span class="tool-free">無料あり</span></div>
+        <div class="tool-tag">長文読解・作文・相談</div>
+      </div>
+    </div>
+    <p>長い文章の要約や、小論文・読書感想文の構成づくりが得意です。ChatGPTより回答が丁寧で、進路相談や悩み相談にも向いています。このサイトの診断もClaudeを使っています。</p>
+    <div class="tool-use">使い方例：「この文章を300字に要約して」「小論文の構成を考えて」</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-icon">🔍</div>
+      <div>
+        <div class="tool-name">Perplexity <span class="tool-free">無料あり</span></div>
+        <div class="tool-tag">調べ物・リサーチ</div>
+      </div>
+    </div>
+    <p>AIが検索結果をまとめて回答してくれるツールです。調べ物のスタートに最適で、参考リンクも一緒に表示されます。レポートや発表の下調べに使うと時間を大幅に短縮できます。</p>
+    <div class="tool-use">使い方例：「SDGsについて高校生向けにまとめて」</div>
+  </div>
+
+  <h2>自己表現・創作に使えるAIツール</h2>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-icon">🎨</div>
+      <div>
+        <div class="tool-name">Canva AI <span class="tool-free">無料あり</span></div>
+        <div class="tool-tag">デザイン・プレゼン</div>
+      </div>
+    </div>
+    <p>文字を入力するだけでデザインを自動生成してくれます。学校の発表資料やポスター、SNS投稿の画像を、センスがなくてもプロっぽく作れます。テンプレートも豊富で操作も簡単です。</p>
+    <div class="tool-use">使い方例：文化祭のポスター、部活の勧誘チラシ、進路発表のスライド</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-icon">🎵</div>
+      <div>
+        <div class="tool-name">Suno <span class="tool-free">無料あり</span></div>
+        <div class="tool-tag">音楽生成</div>
+      </div>
+    </div>
+    <p>テキストを入力するだけでオリジナル音楽を作れるAIです。「明るいポップス」「落ち着いたジャズ」など雰囲気を指定するだけで、プロっぽい楽曲が数秒で完成します。文化祭のBGMにも使えます。</p>
+    <div class="tool-use">使い方例：「元気なJ-POPを作って」「勉強に集中できるBGM」</div>
+  </div>
+
+  <h2>進路・自己分析に使えるAIツール</h2>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-icon">🔮</div>
+      <div>
+        <div class="tool-name">Future Path AI診断 <span class="tool-free">無料</span></div>
+        <div class="tool-tag">進路診断・自己分析</div>
+      </div>
+    </div>
+    <p>悩み・興味・理想の人生を書くだけで、AIが将来のタイプと行動プランを提案します。キーワードマッチングではなく、本物のAIが一人ひとりの言葉を読み解いて診断します。</p>
+    <div class="tool-use">使い方例：進路が決まらないとき、自分の強みを知りたいとき</div>
+  </div>
+
+  <h2>AIツールを使う上での注意点</h2>
+
+  <div class="warning-box">
+    <div class="w-label">注意</div>
+    <p>AIの回答は間違っていることがあります。特に数字・固有名詞・最新情報は必ず別のソースで確認しましょう。学校の課題でAIをそのままコピーして提出するのも避けてください。</p>
+  </div>
+
+  <div class="highlight-box">
+    <h3>AIを「道具」として使いこなすコツ</h3>
+    <p>
+      ・最初から完璧な回答を期待しない。たたき台として使う。<br>
+      ・「もっと具体的に」「高校生向けに」など追加指示を出す。<br>
+      ・AIの回答を鵜呑みにせず、自分の言葉でまとめ直す。<br>
+      ・使い続けるほど、うまい使い方がわかってくる。
+    </p>
+  </div>
+
+  <h2>まとめ</h2>
+
+  <p>AIツールは高校生の強力な味方です。勉強・創作・進路相談、どの場面でも活用できます。大切なのは「AIに任せきりにしない」こと。AIをうまく使いこなす力自体が、これからの時代の武器になります。</p>
+
+  <p>まずは一つ、今日試してみてください。使い始めると、勉強や日常のあらゆる場面で活用できることに気づくはずです。</p>
+
+  <div class="cta">
+    <h2>AIで自分の将来を診断してみよう</h2>
+    <p>悩み・興味・理想を書くだけ。AIがあなただけの行動プランを提案します。</p>
+    <a href="/shindan.html">無料で診断してみる</a>
+  </div>
+
+  <div class="related">
+    <h2>関連記事</h2>
+    <a href="/article1.html">高校生で将来が見えない時にやるべきこと</a>
+    <a href="/article2.html">AI時代に高校生が身につけるべきスキル</a>
+    <a href="/article3.html">留学と起業、どちらを選ぶべきか</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Future Path AI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
