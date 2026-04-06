@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>留学と起業、どちらを選ぶべきか | Future Path AI</title>
+  <meta name="description" content="留学と起業、どちらも「将来の選択肢を広げる」と言われるが、本当に自分に合っているのはどちらか。高校生・大学生向けにタイプ別で徹底比較します。">
+  <meta property="og:title" content="留学と起業、どちらを選ぶべきか">
+  <meta property="og:description" content="留学と起業、どちらが自分に合っているか。タイプ別に徹底比較します。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #f9f7f4;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+    }
+
+    header a {
+      color: #f9f7f4;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #f9f7f4;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      background: #c8a96e;
+      color: #1a1a1a;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: bold;
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero .meta { font-size: 0.85rem; color: #aaa; }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #444;
+      background: #fff;
+      border-left: 4px solid #c8a96e;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #1a1a1a;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin: 1.8rem 0 0.6rem;
+      color: #2d2d2d;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #333;
+      font-size: 0.97rem;
+    }
+
+    .vs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .vs-card {
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid #e8e4de;
+    }
+
+    .vs-card.ryugaku { background: #eff6ff; border-color: #bfdbfe; }
+    .vs-card.kigyo { background: #fef9ee; border-color: #fde68a; }
+
+    .vs-card .vs-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
+    }
+
+    .vs-card.ryugaku .vs-label { color: #1d4ed8; }
+    .vs-card.kigyo .vs-label { color: #92400e; }
+
+    .vs-card h3 { font-size: 1rem; margin: 0 0 0.8rem; }
+
+    .vs-card ul {
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: #444;
+    }
+
+    .vs-card ul li { margin-bottom: 0.4rem; }
+
+    .type-card {
+      background: #fff;
+      border: 1px solid #e8e4de;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .type-card .type-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      color: #c8a96e;
+      margin-bottom: 0.5rem;
+    }
+
+    .type-card h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .type-card p { margin: 0; font-size: 0.9rem; color: #555; }
+
+    .highlight-box {
+      background: #1a1a1a;
+      color: #f9f7f4;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box h3 { color: #c8a96e; margin-top: 0; margin-bottom: 0.8rem; }
+    .highlight-box p { color: #ccc; margin: 0; font-size: 0.93rem; }
+
+    .cta {
+      background: #c8a96e;
+      color: #1a1a1a;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+
+    .cta h2 { border: none; margin-top: 0; font-size: 1.4rem; }
+    .cta p { color: #3a2e1a; margin-bottom: 1.2rem; }
+
+    .cta a {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #f9f7f4;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .cta a:hover { opacity: 0.8; }
+
+    .related { margin: 2rem 0; }
+    .related h2 { margin-bottom: 1rem; }
+
+    .related a {
+      display: block;
+      padding: 1rem 1.2rem;
+      border: 1px solid #e8e4de;
+      border-radius: 8px;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.93rem;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+
+    .related a:hover { border-color: #c8a96e; }
+
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .vs-grid { grid-template-columns: 1fr; }
+      .hero { padding: 2.5rem 1.2rem; }
+      .container { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/">Future Path AI</a>
+</header>
+
+<div class="hero">
+  <div class="tag">留学・起業</div>
+  <h1>留学と起業、<br>どちらを選ぶべきか</h1>
+  <p class="meta">2025年 | Future Path AI 編集部</p>
+</div>
+
+<div class="container">
+
+  <p class="lead">
+    「留学か、起業か」——将来を本気で考える高校生・大学生がよく直面するこの選択。どちらも「人生を変える経験」と言われますが、向いているタイプは全く異なります。この記事では、両者をフラットに比較し、あなたに合った選択のヒントを提供します。
+  </p>
+
+  <h2>まず、それぞれの本質を理解する</h2>
+
+  <p>留学と起業は、どちらも「現状を変えたい」という気持ちから選ばれることが多いですが、その中身は大きく異なります。</p>
+
+  <div class="vs-grid">
+    <div class="vs-card ryugaku">
+      <div class="vs-label">留学</div>
+      <h3>環境を変えて、自分を変える</h3>
+      <ul>
+        <li>異文化・言語への適応力</li>
+        <li>グローバルなネットワーク</li>
+        <li>自分を客観視できる経験</li>
+        <li>比較的リスクが低い</li>
+        <li>費用・期間が明確</li>
+      </ul>
+    </div>
+    <div class="vs-card kigyo">
+      <div class="vs-label">起業</div>
+      <h3>自分の手で、何かを作る</h3>
+      <ul>
+        <li>問題解決・価値創出の経験</li>
+        <li>ビジネス・お金の実践知識</li>
+        <li>失敗から学ぶ速度が速い</li>
+        <li>リスクとリターンが大きい</li>
+        <li>時間・場所を選ばない</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>どちらが向いているか——タイプ別診断</h2>
+
+  <div class="type-card">
+    <div class="type-label">留学向きタイプ</div>
+    <h3>「人・文化・世界」に興味がある人</h3>
+    <p>異なる価値観の人と話すことが好き、英語や外国語に興味がある、海外のライフスタイルに憧れがある——そういう人は留学で大きく変われます。特に「自分が何をしたいかまだわからない」という人には、留学で視野を広げることが先決です。</p>
+  </div>
+
+  <div class="type-card">
+    <div class="type-label">起業向きタイプ</div>
+    <h3>「問題を解決したい・作りたい」人</h3>
+    <p>「なぜこれはもっとよくならないのか」と不満を感じやすい、アイデアが次々浮かぶ、行動してから考えるタイプ——そういう人は起業の方が向いています。高校生でも今すぐ小さく始められます。</p>
+  </div>
+
+  <div class="type-card">
+    <div class="type-label">両方向きタイプ</div>
+    <h3>グローバルなビジネスをやりたい人</h3>
+    <p>海外市場でビジネスをしたい、外資系企業で活躍したい——そういう人は留学と起業の両方が将来につながります。順番としては「留学→起業」が経験を積みやすいです。</p>
+  </div>
+
+  <h2>高校生が今できる、最初の一歩</h2>
+
+  <p>どちらを選ぶにしても、高校生のうちから動けることがあります。大学進学後に本格的に動く前に、小さく試してみることが大切です。</p>
+
+  <div class="highlight-box">
+    <h3>留学に興味があるなら今すぐできること</h3>
+    <p>
+      ・英語の勉強を毎日15分だけ始める<br>
+      ・海外の高校生とSNSでつながってみる<br>
+      ・短期留学プログラムを1つ調べて資料請求する
+    </p>
+  </div>
+
+  <div class="highlight-box">
+    <h3>起業に興味があるなら今すぐできること</h3>
+    <p>
+      ・身近な「不便」を1つノートに書き出す<br>
+      ・メルカリやminneで何か一つ売ってみる<br>
+      ・高校生起業家のインタビュー記事を3本読む
+    </p>
+  </div>
+
+  <h2>「どちらか一方」に絞る必要はない</h2>
+
+  <p>留学か起業かという二択で考える必要はありません。留学中にビジネスを始めた人、起業してから海外展開した人——どちらの順番でも、組み合わせることは可能です。</p>
+
+  <p>大切なのは「なんとなく選ぶ」ことではなく、「自分が何を得たいか」を明確にしてから動くことです。それだけで、同じ経験からでも得られるものが大きく変わります。</p>
+
+  <h2>まとめ</h2>
+
+  <p>留学は「視野を広げ、自分を客観視したい人」に。起業は「問題を解決し、価値を生み出したい人」に向いています。どちらが正解ということはなく、あなたの性格・目標・タイミングによって答えは変わります。まず小さく動いて、自分に合う方向を探していきましょう。</p>
+
+  <div class="cta">
+    <h2>留学と起業、どちらが向いている？</h2>
+    <p>AIがあなたの強みと価値観を分析して、向いている方向を提案します。</p>
+    <a href="/shindan.html">無料で診断してみる</a>
+  </div>
+
+  <div class="related">
+    <h2>関連記事</h2>
+    <a href="/article1.html">高校生で将来が見えない時にやるべきこと</a>
+    <a href="/article2.html">AI時代に高校生が身につけるべきスキル</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Future Path AI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
