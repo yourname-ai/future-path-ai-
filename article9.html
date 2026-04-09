@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文系・理系どちらを選ぶべきか | Future Path AI</title>
+  <meta name="description" content="文系・理系の選択で迷っている高校生へ。後悔しない文理選択のポイントと、AI時代における文系・理系の価値を解説します。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: #f9f7f4; color: #1a1a1a; line-height: 1.8; }
+    header { background: #1a1a1a; padding: 1rem 2rem; }
+    header a { color: #f9f7f4; text-decoration: none; font-size: 1.1rem; font-weight: bold; letter-spacing: 0.05em; }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #f9f7f4; padding: 4rem 2rem; text-align: center; }
+    .hero .tag { display: inline-block; background: #c8a96e; color: #1a1a1a; font-size: 0.75rem; font-weight: bold; padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1.2rem; letter-spacing: 0.1em; }
+    .hero h1 { font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: bold; line-height: 1.4; max-width: 700px; margin: 0 auto 1rem; }
+    .hero .meta { font-size: 0.85rem; color: #aaa; }
+    .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .lead { font-size: 1.05rem; color: #444; background: #fff; border-left: 4px solid #c8a96e; padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2.5rem; }
+    h2 { font-size: 1.3rem; font-weight: bold; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #1a1a1a; }
+    h3 { font-size: 1.05rem; font-weight: bold; margin: 1.8rem 0 0.6rem; color: #2d2d2d; }
+    p { margin-bottom: 1.2rem; color: #333; font-size: 0.97rem; }
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .vs-card { background: #fff; border: 1px solid #e8e4de; border-radius: 10px; padding: 1.5rem; }
+    .vs-card .vs-label { font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 2px solid; }
+    .vs-card.bunkei .vs-label { color: #1d6fa4; border-color: #1d6fa4; }
+    .vs-card.rikei .vs-label { color: #c8a96e; border-color: #c8a96e; }
+    .vs-card ul { list-style: none; padding: 0; }
+    .vs-card ul li { font-size: 0.88rem; color: #444; padding: 0.3rem 0; border-bottom: 1px solid #f0ede8; }
+    .vs-card ul li:last-child { border-bottom: none; }
+    .vs-card ul li::before { content: '・'; color: #c8a96e; }
+    .point-card { background: #fff; border: 1px solid #e8e4de; border-radius: 10px; padding: 1.5rem; margin: 1.2rem 0; }
+    .point-card h3 { margin: 0 0 0.6rem; font-size: 1rem; }
+    .point-card p { margin: 0; font-size: 0.92rem; color: #555; }
+    .highlight-box { background: #1a1a1a; color: #f9f7f4; border-radius: 8px; padding: 1.5rem 2rem; margin: 2rem 0; }
+    .highlight-box h3 { color: #c8a96e; margin-top: 0; margin-bottom: 0.8rem; }
+    .highlight-box p { color: #ccc; margin: 0; font-size: 0.93rem; line-height: 1.8; }
+    .answer-box { border: 2px solid #c8a96e; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; background: #fffdf7; }
+    .answer-box .a-label { font-size: 0.72rem; font-weight: bold; letter-spacing: 0.12em; color: #c8a96e; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .answer-box p { margin: 0; font-size: 0.97rem; color: #1a1a1a; font-weight: bold; }
+    .cta { background: #c8a96e; color: #1a1a1a; text-align: center; padding: 2.5rem 1.5rem; border-radius: 12px; margin: 3rem 0; }
+    .cta h2 { border: none; margin-top: 0; font-size: 1.4rem; }
+    .cta p { color: #3a2e1a; margin-bottom: 1.2rem; }
+    .cta a { display: inline-block; background: #1a1a1a; color: #f9f7f4; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: opacity 0.2s; }
+    .cta a:hover { opacity: 0.8; }
+    .related h2 { margin-bottom: 1rem; }
+    .related a { display: block; padding: 1rem 1.2rem; border: 1px solid #e8e4de; border-radius: 8px; margin-bottom: 0.6rem; text-decoration: none; color: #1a1a1a; font-size: 0.93rem; background: #fff; transition: border-color 0.2s; }
+    .related a:hover { border-color: #c8a96e; }
+    footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; font-size: 0.8rem; }
+    @media (max-width: 600px) { .vs-grid { grid-template-columns: 1fr; } .hero { padding: 2.5rem 1.2rem; } .container { padding: 2rem 1.2rem; } }
+  </style>
+</head>
+<body>
+<header><a href="/">Future Path AI</a></header>
+<div class="hero">
+  <div class="tag">進路・文理選択</div>
+  <h1>文系・理系<br>どちらを選ぶべきか</h1>
+  <p class="meta">2025年 | Future Path AI 編集部</p>
+</div>
+<div class="container">
+  <p class="lead">文理選択は高校生活最大の決断の一つです。「数学が苦手だから文系」「理科が好きだから理系」——そんな単純な理由で決めてしまうと後悔することも。この記事では後悔しない文理選択の考え方を解説します。</p>
 
+  <h2>文系・理系の違いを整理する</h2>
+
+  <div class="vs-grid">
+    <div class="vs-card bunkei">
+      <div class="vs-label">文系</div>
+      <ul>
+        <li>国語・英語・社会が中心</li>
+        <li>法学・経済・文学・教育など</li>
+        <li>言語・コミュニケーション力</li>
+        <li>論理的な文章力</li>
+        <li>就職先が幅広い</li>
+      </ul>
+    </div>
+    <div class="vs-card rikei">
+      <div class="vs-label">理系</div>
+      <ul>
+        <li>数学・理科が中心</li>
+        <li>工学・医学・理学・農学など</li>
+        <li>論理的・数値的思考力</li>
+        <li>専門性の高いスキル</li>
+        <li>理系職種への就職に有利</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>後悔しない文理選択の3つの基準</h2>
+
+  <div class="point-card">
+    <h3>①将来なりたい職業から逆算する</h3>
+    <p>医師・エンジニア・研究者を目指すなら理系一択です。弁護士・教師・マスコミ志望なら文系が多いですが、理系からでも目指せます。まず「どんな仕事がしたいか」を軸に考えましょう。</p>
+  </div>
+
+  <div class="point-card">
+    <h3>②「得意」より「好き」で選ぶ</h3>
+    <p>数学が得意でも嫌いなら、理系4年間は苦痛になります。逆に数学が少し苦手でも好きなら、努力で補えます。「得意科目」ではなく「好きな分野・興味がある学問」で選ぶ方が長続きします。</p>
+  </div>
+
+  <div class="point-card">
+    <h3>③変更のしやすさを考える</h3>
+    <p>理系から文系への変更（文転）は比較的できます。しかし文系から理系への変更（理転）は数学・理科の学習量が多く難しいです。迷っているなら理系を選んでおく方が選択肢が広がります。</p>
+  </div>
+
+  <h2>AI時代の文系・理系</h2>
+
+  <p>「AIが発達したら理系が有利」と思われがちですが、実はそうとも限りません。</p>
+
+  <div class="highlight-box">
+    <h3>AI時代に求められること</h3>
+    <p>
+      文系：AIが苦手な「人間理解・交渉・創造・倫理判断」が武器になる<br>
+      理系：AIを作る・使いこなす技術力がより重要になる<br>
+      共通：どちらもAIリテラシーを身につけることが必須
+    </p>
+  </div>
+
+  <h2>どうしても決められない人へ</h2>
+
+  <div class="answer-box">
+    <div class="a-label">迷ったときの答え</div>
+    <p>迷うなら理系を選ぶ。理系から文系就職はできるが、逆は難しい。</p>
+  </div>
+
+  <p>ただし、数学が本当に嫌いで苦痛を感じるなら無理に理系を選ぶ必要はありません。大切なのは4年間楽しく学べるかどうかです。</p>
+
+  <h2>まとめ</h2>
+  <p>文理選択は「得意科目」より「将来の方向性」と「好きな分野」で決めましょう。迷ったら理系を選ぶのが選択肢を広げる意味で有利ですが、最終的には自分が4年間情熱を持って学べる方を選ぶことが大切です。</p>
+
+  <div class="cta">
+    <h2>文系・理系、自分に向いているのはどっち？</h2>
+    <p>AIがあなたの強みと興味を分析して、向いている方向を提案します。</p>
+    <a href="/shindan.html">無料で診断してみる</a>
+  </div>
+
+  <div class="related">
+    <h2>関連記事</h2>
+    <a href="/article1.html">高校生で将来が見えない時にやるべきこと</a>
+    <a href="/article6.html">高校生におすすめの資格5選</a>
+    <a href="/article7.html">大学選びで後悔しないためにやるべきこと</a>
+    <a href="/article10.html">高校生の英語勉強法完全ガイド</a>
+  </div>
+</div>
+<footer><p>&copy; 2025 Future Path AI. All rights reserved.</p></footer>
+</body>
+</html>
